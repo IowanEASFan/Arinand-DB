@@ -1,0 +1,20 @@
+{
+  "name": "Elongated-Muskrat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "brain.js": "^1.6.1",
+    "disconnect": "^1.2.1",
+    "discord.js": "^11.5.0",
+    "npm": "^6.9.0",
+    "superagent": "^5.0.5",
+    "weather-js": "^2.0.0"
+  }
+}
