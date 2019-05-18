@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("Created on", bot.user.createdAt)
     .addField("Creeator's website:", "http://fcmsite.rf.gd")
     .addField("Created using a template by Derpy Canadian", "https://github.com/Derpy-Canadian/Example-JS-Discord-Bot")
-    .addField("Open Source on Github!", "Soon...");
+    .addField("Open Source on Github!", "https://github.com/IowanEASFan/Arinand-DB/");
 
         return message.channel.send(botembed);
     }
