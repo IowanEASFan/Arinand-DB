@@ -6,14 +6,15 @@ module.exports.run = async (bot, message, args) => {
     .setThumbnail('https://i.ibb.co/mC2Ny48/arinand-av.png')
     .addField("Arinand's User Commands", "Need help? Here it is!")
     .addField("a-userhelp", "Ya just did it.")
-    .addField("a-ping", "Shows the response time between Arinand and Discord.")
-	.addField("a-serverinfo", "Displays the information of a guild.")
-	.addField("a-botinfo", "Displays the information of Arinand.")
-	.addField("a-8ball", "it's an 8ball command, duh")
-	.addField("a-cat", "Displays a random image of a cat.")
-    .addField("a-dog", "Displays a random image of a dog.")
-    .addField("a-dice", "Rolls a die.")
+    .addField("a-8ball", "it's an 8ball command, duh")
+    .addField("a-botinfo", "Displays the information of Arinand.")
+    .addField("a-cat", "Displays a random image of a cat.")
     .addField("a-coin", "Tosses a coin.")
+    .addField("a-dice", "Rolls a die.")
+    .addField("a-dog", "Displays a random image of a dog.")
+    .addField("a-ping", "Shows the response time between Arinand and Discord.")
+    .addField("a-rate", "Rates anything on a 1-to-5 star scale.")
+    .addField("a-serverinfo", "Displays the information of a guild.");
     
     message.channel.send(userhelp);
 }
