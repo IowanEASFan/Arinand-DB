@@ -14,7 +14,8 @@ module.exports.run = async (bot, message, args) => {
     .addField("a-dog", "Displays a random image of a dog.")
     .addField("a-ping", "Shows the response time between Arinand and Discord.")
     .addField("a-rate", "Rates anything on a 1-to-5 star scale.")
-    .addField("a-serverinfo", "Displays the information of a guild.");
+    .addField("a-serverinfo", "Displays the information of a guild.")
+    .addField("a-wx", "Shows weather information for a specific area.");
     
     message.channel.send(userhelp);
 }
