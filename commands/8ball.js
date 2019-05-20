@@ -22,3 +22,4 @@ message.channel.send(ballembed);
 module.exports.help = {
     name: "8ball"
 }
+//
