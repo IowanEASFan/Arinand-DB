@@ -12,6 +12,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("a-coin", "Tosses a coin.")
     .addField("a-dice", "Rolls a die.")
     .addField("a-dog", "Displays a random image of a dog.")
+    .addField("a-ha", "Shows a reactionary GIF to any joke you or others crack.")
     .addField("a-ping", "Shows the response time between Arinand and Discord.")
     .addField("a-rate", "Rates anything on a 1-to-5 star scale.")
     .addField("a-serverinfo", "Displays the information of a guild.")
