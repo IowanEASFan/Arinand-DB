@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
 	.setColor('#0099ff')
 	.setTitle('Response Time')
 	.setThumbnail('https://i.ibb.co/mC2Ny48/arinand-av.png')
-    .setDescription(`The response time between Arinand and\nDiscord is **${bot.ping}** milleseconds.`);
+    .setDescription(`The response time between Arinand and\nDiscord is **${Math.round(bot.ping)}** milleseconds.`);
 
     message.channel.send(ping);
 }
