@@ -6,13 +6,13 @@ let replies = ["1", "2", "3", "4", "5", "6"];
 
 let result = Math.floor((Math.random() * replies.length));
 
-let ballembed = new Discord.RichEmbed()
+let diceembed = new Discord.RichEmbed()
 .setThumbnail("https://i.ibb.co/0ZWdMjQ/download.jpg")
-.setColor("#1e74ff")
+.setColor('#0099ff')
 .setTitle("Dice :game_die:")
 .setDescription(`${message.author.tag}, you rolled a ${'Answer', replies[result]}!`);
 
-message.channel.send(ballembed);
+message.channel.send(diceembed);
 
 }
 
