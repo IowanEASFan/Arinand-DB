@@ -1,27 +1,26 @@
 const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
-let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-	if(!kUser) return message.channel.send("```Error 404 - User Not Found```");
-	let kReason = args.join(" ").slice(22);
+let kickedUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+	if(!kickedUser) return message.channel.send("```Error 404 - User Not Found```");
+	let kickReason = args.join(" ").slice(22);
 	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Unable to kick member.")
-	if(kUser.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Sorry, but this user has the **MANAGE_MESSAGES** role, therefore they are unkickable.")
-	if (!kReason) {
-	        kReason = "No reason provided";
+	if(kickedUser.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Sorry, but this user has the **MANAGE_MESSAGES** role, therefore they are unkickable.")
+	if (!kickReason) {
+	        kickReason = "Unstated";
 	    }
 
 	let kickEmbed = new Discord.RichEmbed()
-	.setTitle("User has recieved the boot!")
+	.addField("User was kicked!", `Log created at ${message.createdAt}`)
 	.setColor("#FF0000")
-	.addField("Kicked User:", `${kUser}, ${kUser.id}`)
+	.addField("Kicked User:", `${kickedUser}, ${kickedUser.id}`)
 	.addField("Kicked by:", `<@${message.author.id}>`)
-	.addField("Kicked at:", message.createdAt)
-	.addField("Reason for kick:", kReason);
+	.addField("Reason for kick:", kickReason);
 
 	let kickChannel = message.guild.channels.find('name', 'reports')
 	if(!kickChannel) return message.channel.send('Error: channel named **reports** not found!')
 	kickChannel.send(kickEmbed);
-	kUser.kick()
+	kickedUser.kick()
 
 }
 
