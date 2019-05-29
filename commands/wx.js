@@ -25,7 +25,13 @@ module.exports.run = async (bot, message, args) => {
 		}
 		  
 		catch(err) {
-			return message.channel.send ("`Sorry, but that place doesn't exist!`");
+			
+			let wxerr = new Discord.RichEmbed()
+    		.setColor('#ff0000')
+    		.addField("Weather Error", "The location you entered does not exist!")
+    	
+			message.channel.send(wxerr);
+			
 		}
         
     });
