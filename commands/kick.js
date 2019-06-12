@@ -18,8 +18,8 @@ let kickedUser = message.guild.member(message.mentions.users.first() || message.
 	.addField("Reason for kick:", kickReason);
 
 	let kickChannel = message.guild.channels.find('name', 'reports')
-	if(!kickChannel) return message.channel.send('Error: channel named **reports** not found!')
-	kickChannel.send(kickEmbed);
+	if(!kickChannel) kickedUser.kick() + message.channel.send (`User was kicked by command of **${message.author.tag}** due to "**${kickReason}**".`);
+	if(kickChannel) kickChannel.send(kickEmbed);
 	kickedUser.kick()
 
 }
