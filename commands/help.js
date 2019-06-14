@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
     let userhelp = new Discord.RichEmbed()
     .setColor('#0099ff')
     .setThumbnail('https://i.ibb.co/mC2Ny48/arinand-av.png')
-    .addField("Arinand's User Commands", "Need help? Here it is!")
+    .addField("Arinand's User Commands", "Use `a-help+s` to see staff commands.")
     .addField("a-userhelp", "Ya just did it.")
     .addField("a-8ball", "it's an 8ball command, duh")
     .addField("a-botinfo", "Displays the information of Arinand.")
