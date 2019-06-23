@@ -4,8 +4,21 @@ module.exports.run = async (bot, message, args) => {
 let kickedUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
 	if(!kickedUser) return message.channel.send("```Error 404 - User Not Found```");
 	let kickReason = args.join(" ").slice(22);
-	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Unable to kick member.")
-	if(kickedUser.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Sorry, but this user has the **MANAGE_MESSAGES** role, therefore they are unkickable.")
+	if(!message.member.hasPermission("KICK_MEMBERS")) {
+		let InsufficientPerms = new Discord.RichEmbed()
+		.addField("Insufficient Permissions!", "You do not have the `Kick Members` permission.")
+		.setColor("#FF0000");
+
+		return message.channel.send(InsufficientPerms);
+	}
+	if(kickedUser.hasPermission('KICK_MEMBERS')) {
+		let UnableToKick = new Discord.RichEmbed()
+		.addField("Unable to kick!", "The member you are trying to kick has the `Kick Members` permission. I would suggest a demotion. :shrug:")
+		.setColor("#FF0000");
+
+		return message.channel.send(UnableToKick); 
+		}
+
 	if (!kickReason) {
 	        kickReason = "Unstated";
 	    }
