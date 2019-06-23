@@ -6,8 +6,20 @@ let bannedUser = message.guild.member(message.mentions.users.first() || message.
 	
 	let BanReason = args.join(" ").slice(22);
 	
-	if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send("Unable to ban member.")
-	if(bannedUser.hasPermission('MANAGE_MESSAGES')) return message.channel.send("Sorry, but this user has the **MANAGE_MESSAGES** role, therefore they are unbanable.")
+	if(!message.member.hasPermission("BAN_MEMBERS")) {
+		let InsufficientPerms = new Discord.RichEmbed()
+		.addField("Insufficient Permissions!", "You do not have the `Ban Members` permission.")
+		.setColor("#FF0000");
+
+		return message.channel.send(InsufficientPerms);
+	}
+	if(bannedUser.hasPermission('BAN_MEMBERS')) {
+		let UnableToBan = new Discord.RichEmbed()
+		.addField("Unable to ban!", "The member you are trying to kick has the `Ban Members` permission. I would suggest manually doing so, or strip their roles and try again. :shrug:")
+		.setColor("#FF0000");
+
+		return message.channel.send(UnableToBan);
+	}
 		if (!BanReason) {
 		        BanReason = "Unstated";
 		    }
