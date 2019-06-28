@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 	.addField("a-ban", "Bans a user. Requires a channel called #reports.")
 	.addField("a-clear", "Clears a defined amount of messages. Example: 'a-clear 10' will clear 10 messages.")
 
-	return message.channel.send(serverembed)
+	return message.author.send(serverembed)
 
 }
 module.exports.help = {
