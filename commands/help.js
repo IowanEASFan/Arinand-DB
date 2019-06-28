@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     .addField("a-wx", "Shows weather information for a specific area.")
     .addField("a-wx+c", "Shows weather information for a specific area with temperature information in Celcius.");
     
-    message.channel.send(userhelp);
+    message.author.send(userhelp);
 }
 
 module.exports.help = {
