@@ -2,7 +2,13 @@ const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args) => {
 let kickedUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-	if(!kickedUser) return message.channel.send("```Error 404 - User Not Found```");
+	if(!kickedUser) {
+		let NotFound = new Discord.RichEmbed()
+		.addField("User not found!", `Sorry, but ${kickedUser} was not found.`)
+		.setColor("#FF0000");
+
+		return message.channel.send(NotFound);
+	}
 	let kickReason = args.join(" ").slice(22);
 	if(!message.member.hasPermission("KICK_MEMBERS")) {
 		let InsufficientPerms = new Discord.RichEmbed()
