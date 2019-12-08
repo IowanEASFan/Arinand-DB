@@ -11,7 +11,7 @@ let rate_embed = new Discord.RichEmbed()
 .setAuthor(message.author.tag)
 .setThumbnail("https://i.ibb.co/bKzQNjX/e4d52f4d69d7bba67e5fd70ffe26b70d.png")
 .setColor("#1e74ff")
-.addField(`Arinand gives ${question} a(n)...`, replies[result]);
+.addField(`Arinand gives ${question}...`, replies[result]);
 
 message.channel.send(rate_embed);
 
